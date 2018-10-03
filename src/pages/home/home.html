@@ -3,13 +3,18 @@
     <ion-title>
       Desire
     </ion-title>
+    <ion-buttons end> 
+        <button ion-button (click)="openDesireAlert()">
+          <ion-icon name="add"></ion-icon>
+        </button>
+      </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
     <ion-list>
-        <ion-item-sliding>
-           <ion-item>Statement</ion-item>
+        <ion-item-sliding *ngFor="let desire of desires">
+           <ion-item>{{desire}}</ion-item>
     
            <ion-item-options side="right">
              <button color="danger" ion-button>
@@ -18,7 +23,5 @@
            </ion-item-options>
         </ion-item-sliding>
        
-        <ion-item>Goal 1</ion-item>
-        <ion-item>Goal 2</ion-item>
       </ion-list>
 </ion-content>
