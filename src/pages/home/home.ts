@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, AlertController, reorderArray } from 'ionic-angular';
+import { NavController, AlertController, reorderArray, ToastController } from 'ionic-angular';
 
 import { DesireProvider } from '../../providers/desire/desire';
 import { ArchivedDesiresPage } from "../archived-desires/archived-desires";
@@ -13,7 +13,7 @@ export class HomePage {
   public reorderIsEnabled = false;
   public archivedDesiresPage = ArchivedDesiresPage;
 
-  constructor(private desireProvider: DesireProvider, public navCtrl: NavController, private alertController: AlertController) {
+  constructor(private toastController: ToastController, private desireProvider: DesireProvider, public navCtrl: NavController, private alertController: AlertController) {
     this.desires = this.desireProvider.getDesires();
   }
 
@@ -53,6 +53,14 @@ export class HomePage {
             let desireText;
             desireText = inputData.addDesireInput;
             this.desireProvider.addDesire(desireText);
+
+            addDesireAlert.onDidDismiss(()=> {
+                let addDesireToast = this.toastController.create({
+                  message: "Desire Added",
+                  duration: 2000
+                });
+                addDesireToast.present();              
+            });            
           }
         }
       ]
