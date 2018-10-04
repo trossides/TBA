@@ -13,6 +13,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { HttpModule } from '@angular/http';
 
 import { DesireProvider } from '../providers/desire/desire';
+import { ArchivedDesiresPage } from "../pages/archived-desires/archived-desires";
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { DesireProvider } from '../providers/desire/desire';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    ArchivedDesiresPage
   ],
   imports: [
     HttpModule,
@@ -34,7 +36,8 @@ import { DesireProvider } from '../providers/desire/desire';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    ArchivedDesiresPage
   ],
   providers: [
     DesireProvider,

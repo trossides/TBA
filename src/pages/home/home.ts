@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, AlertController, reorderArray } from 'ionic-angular';
 
 import { DesireProvider } from '../../providers/desire/desire';
+import { ArchivedDesiresPage } from "../archived-desires/archived-desires";
 
 @Component({
   selector: 'page-home',
@@ -10,9 +11,14 @@ import { DesireProvider } from '../../providers/desire/desire';
 export class HomePage {
   public desires = [];
   public reorderIsEnabled = false;
+  public archivedDesiresPage = ArchivedDesiresPage;
 
   constructor(private desireProvider: DesireProvider, public navCtrl: NavController, private alertController: AlertController) {
     this.desires = this.desireProvider.getDesires();
+  }
+
+  goToArchivePage(){
+    this.navCtrl.push(ArchivedDesiresPage);
   }
 
   toggleReorder(){
