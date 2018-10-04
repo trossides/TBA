@@ -20,11 +20,11 @@
 
 <ion-content padding>
     <ion-list [reorder]="reorderIsEnabled" (ionItemReorder)="itemReordered($event)">
-        <ion-item-sliding *ngFor="let desire of desires">
+        <ion-item-sliding *ngFor="let desire of desires; let desireIndex = index">
            <ion-item>{{desire}}</ion-item>
     
            <ion-item-options side="right">
-             <button color="danger" ion-button>
+             <button color="danger" ion-button (click)="archiveDesire(desireIndex)">
                <ion-icon name="trash"></ion-icon>
              </button>
            </ion-item-options>

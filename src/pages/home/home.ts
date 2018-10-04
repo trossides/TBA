@@ -17,6 +17,10 @@ export class HomePage {
     this.desires = this.desireProvider.getDesires();
   }
 
+  archiveDesire(desireIndex) {
+    this.desireProvider.archiveDesire(desireIndex);
+  }
+
   goToArchivePage(){
     this.navCtrl.push(ArchivedDesiresPage);
   }

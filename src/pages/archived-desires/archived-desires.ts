@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { DesireProvider } from "../../providers/desire/desire"
 
 /**
  * Generated class for the ArchivedDesiresPage page.
@@ -14,12 +15,13 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'archived-desires.html',
 })
 export class ArchivedDesiresPage {
+  public archivedDesires = [];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private desireProvider: DesireProvider, public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ArchivedDesiresPage');
+    this.archivedDesires = this.desireProvider.getArchivedDesires();
   }
 
 }
