@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, AlertController } from 'ionic-angular';
+import { NavController, AlertController, reorderArray } from 'ionic-angular';
 
 import { DesireProvider } from '../../providers/desire/desire';
 
@@ -9,9 +9,18 @@ import { DesireProvider } from '../../providers/desire/desire';
 })
 export class HomePage {
   public desires = [];
+  public reorderIsEnabled = false;
 
   constructor(private desireProvider: DesireProvider, public navCtrl: NavController, private alertController: AlertController) {
     this.desires = this.desireProvider.getDesires();
+  }
+
+  toggleReorder(){
+    this.reorderIsEnabled = !this.reorderIsEnabled;
+  }
+
+  itemReordered($event){
+    reorderArray(this.desires, $event);
   }
 
   openDesireAlert(){

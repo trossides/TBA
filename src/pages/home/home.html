@@ -3,7 +3,14 @@
     <ion-title>
       Desire
     </ion-title>
-    <ion-buttons end> 
+    <ion-buttons end>
+      <button (click)="toggleReorder()" ion-button *ngIf="!reorderIsEnabled">
+        Edit
+      </button>
+      <button (click)="toggleReorder()" ion-button *ngIf="reorderIsEnabled">
+          Done
+      </button>
+
         <button ion-button (click)="openDesireAlert()">
           <ion-icon name="add"></ion-icon>
         </button>
@@ -12,7 +19,7 @@
 </ion-header>
 
 <ion-content padding>
-    <ion-list>
+    <ion-list [reorder]="reorderIsEnabled" (ionItemReorder)="itemReordered($event)">
         <ion-item-sliding *ngFor="let desire of desires">
            <ion-item>{{desire}}</ion-item>
     
