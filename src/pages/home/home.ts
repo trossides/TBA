@@ -60,13 +60,51 @@ export class HomePage {
                   duration: 2000
                 });
                 addDesireToast.present();              
-            });            
+            });
+
           }
         }
       ]
     });
     addDesireAlert.present();
 
+  }
+
+  editDesire(desireIndex){
+    let editDesireAlert = this.alertController.create({
+      title: "Edit A Desire",
+      message: "Edit Your Desire",
+      inputs: [
+        {
+          type: "text",
+          name: "editDesireInput",
+          value: this.desires[desireIndex]
+        }
+      ],
+      buttons: [
+        {
+          text: "Cancel"
+        },
+        {
+          text: "Edit Desire",
+          handler: (inputData)=> {
+            let desireText;
+            desireText = inputData.editDesireInput;
+            this.desireProvider.editDesire(desireText, desireIndex);
+
+            editDesireAlert.onDidDismiss(()=> {
+                  let editDesireToast = this.toastController.create({
+                  message: "Desire Edited",
+                  duration: 2000
+                });
+                editDesireToast.present();
+            });
+            
+          }
+        }
+      ]
+    });
+    editDesireAlert.present();
   }
 
 }

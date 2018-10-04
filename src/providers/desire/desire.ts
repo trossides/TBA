@@ -35,4 +35,8 @@ export class DesireProvider {
     this.desires.push(desire);
   }
 
+  editDesire(desire, desireIndex){
+    this.desires[desireIndex] = desire;
+  }
+
 }

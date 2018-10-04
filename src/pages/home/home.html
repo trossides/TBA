@@ -21,6 +21,13 @@
 <ion-content padding>
     <ion-list [reorder]="reorderIsEnabled" (ionItemReorder)="itemReordered($event)">
         <ion-item-sliding *ngFor="let desire of desires; let desireIndex = index">
+
+            <ion-item-options side="left">
+                <button ion-button (click)="editDesire(desireIndex)">
+                  <ion-icon name="create"></ion-icon>
+                </button>
+              </ion-item-options>
+
            <ion-item>{{desire}}</ion-item>
     
            <ion-item-options side="right">
@@ -37,7 +44,5 @@
           <ion-icon name="archive"></ion-icon>
         </button>
       </ion-fab>
-
-
 
 </ion-content>
