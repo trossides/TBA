@@ -1,11 +1,11 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Desire
+      Daily Desires
     </ion-title>
     <ion-buttons end>
       <button (click)="toggleReorder()" ion-button *ngIf="!reorderIsEnabled">
-        Edit
+        Reorder
       </button>
       <button (click)="toggleReorder()" ion-button *ngIf="reorderIsEnabled">
           Done
@@ -31,17 +31,20 @@
            <ion-item>{{desire}}</ion-item>
     
            <ion-item-options side="right">
-             <button color="danger" ion-button (click)="archiveDesire(desireIndex)">
-               <ion-icon name="trash"></ion-icon>
+             <button color="dark" ion-button (click)="archiveDesire(desireIndex)">
+               <ion-icon name="key"></ion-icon>
              </button>
+             <button color="secondary" ion-button (click)="archiveDesire(desireIndex)">
+              <ion-icon name="checkmark-circle"></ion-icon>
+            </button>
            </ion-item-options>
         </ion-item-sliding>
        
       </ion-list>
 
       <ion-fab right bottom>
-        <button ion-fab (click)="goToArchivePage()">
-          <ion-icon name="archive"></ion-icon>
+        <button color="secondary" ion-fab (click)="goToArchivePage()">
+          <ion-icon name="checkmark-circle"></ion-icon>
         </button>
       </ion-fab>
 
