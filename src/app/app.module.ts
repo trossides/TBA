@@ -14,6 +14,9 @@ import { HttpModule } from '@angular/http';
 
 import { DesireProvider } from '../providers/desire/desire';
 import { ArchivedDesiresPage } from "../pages/archived-desires/archived-desires";
+import { BurningDesirePage } from "../pages/burning-desire/burning-desire";
+import { BurningProvider } from '../providers/burning/burning';
+import { DeleteDesiresPage } from "../pages/delete-desires/delete-desires";
 
 
 @NgModule({
@@ -23,7 +26,9 @@ import { ArchivedDesiresPage } from "../pages/archived-desires/archived-desires"
     ContactPage,
     HomePage,
     TabsPage,
-    ArchivedDesiresPage
+    ArchivedDesiresPage,
+    BurningDesirePage,
+    DeleteDesiresPage,
   ],
   imports: [
     HttpModule,
@@ -37,13 +42,16 @@ import { ArchivedDesiresPage } from "../pages/archived-desires/archived-desires"
     ContactPage,
     HomePage,
     TabsPage,
-    ArchivedDesiresPage
+    ArchivedDesiresPage,
+    BurningDesirePage,
+    DeleteDesiresPage,
   ],
   providers: [
     DesireProvider,
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    BurningProvider
     
   ]
 })

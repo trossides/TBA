@@ -31,9 +31,9 @@
            <ion-item>{{desire}}</ion-item>
     
            <ion-item-options side="right">
-             <button color="dark" ion-button (click)="archiveDesire(desireIndex)">
+             <!--<button color="dark" ion-button (click)="archiveDesire(desireIndex)">
                <ion-icon name="key"></ion-icon>
-             </button>
+             </button>-->
              <button color="secondary" ion-button (click)="archiveDesire(desireIndex)">
               <ion-icon name="checkmark-circle"></ion-icon>
             </button>
@@ -45,6 +45,12 @@
       <ion-fab right bottom>
         <button color="secondary" ion-fab (click)="goToArchivePage()">
           <ion-icon name="checkmark-circle"></ion-icon>
+        </button>
+      </ion-fab>
+
+      <ion-fab left bottom>
+        <button color="dark" ion-fab (click)="goToBurningPage()">
+          <ion-icon name="key"></ion-icon>
         </button>
       </ion-fab>
 

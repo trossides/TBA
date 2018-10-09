@@ -3,6 +3,7 @@ import { NavController, AlertController, reorderArray, ToastController } from 'i
 
 import { DesireProvider } from '../../providers/desire/desire';
 import { ArchivedDesiresPage } from "../archived-desires/archived-desires";
+import { BurningDesirePage } from "../burning-desire/burning-desire";
 
 @Component({
   selector: 'page-home',
@@ -23,6 +24,10 @@ export class HomePage {
 
   goToArchivePage(){
     this.navCtrl.push(ArchivedDesiresPage);
+  }
+
+  goToBurningPage(){
+    this.navCtrl.push(BurningDesirePage);
   }
 
   toggleReorder(){
@@ -70,7 +75,7 @@ export class HomePage {
 
   }
 
-  editDesire(desireIndex){
+    editDesire(desireIndex){
     let editDesireAlert = this.alertController.create({
       title: "Edit A Desire",
       message: "Edit Your Desire",

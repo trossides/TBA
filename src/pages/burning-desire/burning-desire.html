@@ -1,0 +1,50 @@
+<!--
+  Generated template for the BurningDesirePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Burning Desire
+    </ion-title>  
+  <ion-buttons end>
+    <button ion-button (click)="openBurningAlert()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item-sliding *ngFor="let burning of burnings; let burningIndex = index">
+
+        <ion-item-options side="left">
+            <button ion-button (click)="editBurning(burningIndex)">
+              <ion-icon name="create"></ion-icon>
+            </button>
+          </ion-item-options>
+
+       <ion-item>{{burning}}</ion-item>
+
+       <ion-item-options side="right">
+         <!--<button color="dark" ion-button (click)="archiveDesire(desireIndex)">
+           <ion-icon name="key"></ion-icon>
+         </button>-->
+         <button color="danger" ion-button (click)="deleteDesire(burningIndex)">
+          <ion-icon name="trash"></ion-icon>
+        </button>
+       </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+  <!--<ion-fab right bottom>
+      <button color="danger" ion-fab (click)="goToDeletePage()">
+        <ion-icon name="trash"></ion-icon>
+      </button>
+    </ion-fab>-->
+
+  </ion-content>
