@@ -17,7 +17,7 @@ import { ArchivedDesiresPage } from "../pages/archived-desires/archived-desires"
 import { BurningDesirePage } from "../pages/burning-desire/burning-desire";
 import { BurningProvider } from '../providers/burning/burning';
 import { DeleteDesiresPage } from "../pages/delete-desires/delete-desires";
-
+import { OneSignal } from '@ionic-native/onesignal';
 
 @NgModule({
   declarations: [
@@ -51,7 +51,8 @@ import { DeleteDesiresPage } from "../pages/delete-desires/delete-desires";
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    BurningProvider
+    BurningProvider,
+    OneSignal
     
   ]
 })

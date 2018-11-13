@@ -41,6 +41,14 @@
     </ion-item-sliding>
   </ion-list>
 
+  <ion-item>
+    <ion-label>Morning Notification</ion-label>
+    <ion-datetime displayFormat="hh:mm A" [(ngModel)]="myDateMorning"></ion-datetime>
+  </ion-item>
+  <ion-item>
+    <ion-label>Night Notification</ion-label>
+    <ion-datetime displayFormat="hh:mm A" [(ngModel)]="myDateNight"></ion-datetime>
+  </ion-item>
   <!--<ion-fab right bottom>
       <button color="danger" ion-fab (click)="goToDeletePage()">
         <ion-icon name="trash"></ion-icon>
